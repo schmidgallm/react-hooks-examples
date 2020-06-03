@@ -1,0 +1,32 @@
+.form {
+  width: 60%;
+  margin: 40px auto;
+}
+
+h3 {
+  font-size: 3rem;
+  margin: 40px auto;
+}
+
+h4 {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2e2e2e;
+  margin-top: 75px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin: 50px auto;
+}
+
+@media screen and (max-width: 920px) {
+  .form {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+}
