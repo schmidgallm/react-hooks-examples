@@ -2,26 +2,24 @@ import React, { useState, useEffect } from 'react';
 
 export const Effect = () => {
   const [facts, setFacts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  const getFacts = async () => {
-    const res = await fetch('https://cat-fact.herokuapp.com/facts');
-    const json = await res.json();
-    setFacts(json.all);
-    setLoading(!loading);
-  };
-
+  // this effect only runs once at time of mount as we pass an empty array argument
   useEffect(() => {
-    getFacts();
-  });
+    console.log('Component mounted');
+  }, []);
+
+  // this effect will run every time the facts state we pass as argument changes
+  useEffect(() => {
+    fetch('https://cat-fact.herokuapp.com/facts')
+      .then((response) => response.json())
+      .then((json) => setFacts(json.all));
+  }, [facts]);
 
   return (
     <div>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        facts.map((fact) => <p key={fact._id}>{fact.text}</p>)
-      )}
+      {facts.map((fact) => (
+        <p key={fact._id}>{fact.text}</p>
+      ))}
     </div>
   );
 };
