@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-    <a className='navbar-brand' href='/'>
+    <Link className='navbar-brand' to='/'>
       React Hooks Examples
-    </a>
+    </Link>
     <button
       className='navbar-toggler'
       type='button'
@@ -19,14 +20,14 @@ const Navbar = () => (
     <div className='collapse navbar-collapse' id='navbarNav'>
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item'>
-          <a className='nav-link' href='/state'>
+          <Link className='nav-link' to='/state'>
             useState
-          </a>
+          </Link>
         </li>
         <li className='nav-item'>
-          <a className='nav-link' href='/effect'>
+          <Link className='nav-link' to='/effect'>
             useEffect
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

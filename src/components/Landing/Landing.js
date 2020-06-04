@@ -1,20 +1,21 @@
 import React from 'react';
 import './Landing.css';
+import { Link } from 'react-router-dom';
 
 const Landing = () => (
   <div className='wrapper bg-primary text-white'>
     <div className='sections'>
       <div className='header'>
-        <h1>Fun with React Hooks</h1>
-        <p>Working examples of useState, useEffect, and custom hooks</p>
+        <h1>React Hooks Practical Examples</h1>
+        <p className='lead'>Working examples of useState and useEffect</p>
       </div>
       <div className='links'>
-        <a className='btn btn-outline-warning' href='/state'>
+        <Link className='btn btn-outline-warning' to='/state'>
           Use State
-        </a>
-        <a className='btn btn-outline-warning' href='/effect'>
+        </Link>
+        <Link className='btn btn-outline-warning' to='/effect'>
           Use Effect
-        </a>
+        </Link>
       </div>
     </div>
   </div>
